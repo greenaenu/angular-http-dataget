@@ -1,0 +1,27 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>IMAGE</td>
+      <td>CONTENT</td>
+      <td>READ</td>
+      <td>DATE</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let datas of $data | async">
+      <td>{{ datas.id }}</td>
+      <td>{{ datas.sender.name }}</td>
+      <td>
+        <img src="{{ datas.sender.profileImage }}" />
+      </td>
+      <td>{{ datas.content }}</td>
+      <td>{{ datas.read }}</td>
+      <td>{{ datas.date | date }}</td>
+    </tr>
+  </tbody>
+</table>
